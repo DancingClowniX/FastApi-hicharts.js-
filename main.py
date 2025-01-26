@@ -15,17 +15,11 @@ templates = Jinja2Templates(directory="templates")
 
 app.mount('/static', StaticFiles(directory='static'), name='static')
 
-users = [{'id':1,'name':'Jhon','age':23},
-         {'id':2,'name':'Kevin','age':33},
-         {'id':3,'name':'bob','age':45}]
-
-posts = [{'id':1,'title':'news1','body':'text1','author':users[0]},
-         {'id':2,'title':'news2','body':'text2','author':users[1]},
-         {'id':3,'title':'news3','body':'text3','author':users[2]}]
-
 
 @app.get("/")
 async def read_user(request:Request):
+
+
     return templates.TemplateResponse("home.html",{"request":request})
 
 # @app.post("/posts/add")
