@@ -13,11 +13,11 @@
     document.addEventListener('DOMContentLoaded',function () {
         async function fetchData() {
             try {
-                const response = await fetch('/data'); // Запрос к эндпоинту /data
-                const data = await response.json(); // Парсинг JSON
+                const response = await fetch('/data'); 
+                const data = await response.json(); // Парсинг
                 console.log(data);
                  console.log(data[0][1]);// Вывод данных в консоль
-                // Здесь вы можете добавить код для отображения данных на странице
+                
                 return data
             } catch (error) {
                 console.error('Ошибка при получении данных:', error);
